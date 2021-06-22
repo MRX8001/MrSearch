@@ -2,9 +2,12 @@ try:
 	import os
 	import argparse
 	import random
+	import pyfiglet
 except ModuleNotFoundError:
-	print("\033[1;31mMódulo 'argparse' não encontrado")
-	os.system('python3 -m pip install argparse')
+	print("\033[1;31mMódulo não encontrado\033[m\n")
+	os.system('python3 -m pip install -r requirements.txt')
+os.system('clear')
+pyfiglet.print_figlet('MRX800', '3D-ASCII')
 uagents = random.choice(open('user-agents.txt', 'r', encoding='UTF-8', errors='ignore').readlines())
 class MrSearch:
 	def __init__(self, query, num, user_agent=uagents):
