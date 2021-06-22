@@ -6,7 +6,7 @@ try:
 except ModuleNotFoundError:
 	print("\033[1;31mMódulo não encontrado\033[m\n")
 	os.system('python3 -m pip install -r requirements.txt')
-os.system('clear')
+os.system('pyfiglet -L tools/3D-ASCII.flf; clear')
 pyfiglet.print_figlet('MRX800', '3D-ASCII')
 uagents = random.choice(open('user-agents.txt', 'r', encoding='UTF-8', errors='ignore').readlines())
 class MrSearch:
