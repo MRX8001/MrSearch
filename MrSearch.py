@@ -5,6 +5,7 @@ except ModuleNotFoundError:
 	os.system('python3 -m pip install -r requirements.txt')
 os.system('pyfiglet -L tools/3D-ASCII.flf; clear')
 pyfiglet.print_figlet('MRX800', '3D-ASCII')
+print('\033[1;37mATIVE O TOR ANTES DE FAZER OS TESTES COM O MrSearch\033[m\n')
 uagents = random.choice(open('tools/user-agents.txt', 'r', encoding='UTF-8', errors='ignore').readlines())
 class MrSearch:
 	def __init__(self, query, num, user_agent=uagents):
