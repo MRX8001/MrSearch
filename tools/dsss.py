@@ -75,8 +75,8 @@ def scan_page(url, data=None):
     except KeyboardInterrupt:
          return "Scan cancelado"
     return retval
-prox = {'socks5':'socks5://127.0.0.1:9050'}
-def init_options(proxy=prox, cookie=None, ua=None, referer=None):
+prox = {'http':'socks5://127.0.0.1:9050', 'https': 'socks5://127.0.0.1:9050'}
+def init_options(proxy=prox, cookie=None, ua=random.choice(open('user-agents.txt', 'r', encoding='UTF-8', errors='ignore').readlines()), referer=None):
     globals()["_headers"] = dict(filter(lambda _: _[1], ((COOKIE, cookie), (UA, ua or NAME), (REFERER, referer))))
     urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({'http': proxy})) if proxy else None)
 

