@@ -31,12 +31,10 @@ class MrSearch:
 				if scan == True:
 					print('\n\033[1;4;33mO alvo possui a vuln Time-based Blind SQLI\033[m\n')
 				else:
-					pass
 					scan_page = dsss.scan_page(url=result)
 					if scan_page == True:
 						print('\n\033[1;4;33mO alvo está vulnerável a ataques de SQLI\033[m\n')
 					else:
-						pass
 						sqlscan = sql_scan.fuzz(url=result, user_agent=self.user_agent, proxy={'http': 'socks5://127.0.0.1:9050', 'https': 'socks5://127.0.0.1:9050'})
 						if sqlscan == True:
 							print('\n\033[1;4;33mO alvo possui a vuln Time-based Blind SQLI\033[m\n')
